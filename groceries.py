@@ -45,3 +45,20 @@ for product in sorted_products:
     price_usd = " (${0:.2f})".format(product["price"])
  
     print(product["name"] + price_usd)
+
+
+#Departments 
+
+departments = []
+for product in products:
+    if product["department"] not in departments:
+        departments.append(product["department"])
+
+department_count = len(departments)
+
+print("--------------")
+print("THERE ARE " + str(department_count) + " DEPARTMENTS")
+print("--------------")
+
+for d in departments:
+    print(d)
