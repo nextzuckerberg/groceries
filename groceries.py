@@ -44,7 +44,7 @@ for product in sorted_products:
 
     price_usd = " (${0:.2f})".format(product["price"])
  
-    print(product["name"] + price_usd)
+    print(" + " + product["name"] + price_usd)
 
 
 #Departments 
@@ -64,5 +64,9 @@ departments.sort()
 for d in departments:
     matching_products = [p for p in products if p["department"] == d]
     matching_product_count = len(matching_products)
-    print(d.title()+ " (" + str(matching_product_count) + " " "products" +")")
+    if matching_product_count > 1:
+        label = "products"
+    else:
+        label = "product"
+    print(" + " + d.title()+ " (" + str(matching_product_count) + " " + label +")")
 
